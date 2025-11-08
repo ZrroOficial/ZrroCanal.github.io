@@ -1,11 +1,384 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>zrrozitoWEBplaus</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- EDITÁVEL: Título do Site (aparece na aba do navegador) -->
+    <title>Zrrooficial - Site Oficial</title>
+    
+    <!-- Carrega o Tailwind CSS para estilos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Carrega a fonte Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Define a fonte Inter como padrão */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Classe usada pelo JavaScript para esconder as abas que não estão ativas */
+        .page-content.hidden {
+            display: none;
+        }
+    </style>
 </head>
-<body>
-<p>TESTE SITEEEEEEEEEEEE</p>
+<body class="bg-gray-900 text-white min-h-screen">
+
+    <div class="container mx-auto px-4 py-8 max-w-5xl">
+        
+        <!-- CABEÇALHO E NAVEGAÇÃO -->
+        <header class="flex flex-col md:flex-row justify-between items-center mb-8">
+            <!-- EDITÁVEL: Título Principal do Site -->
+            <h1 class="text-4xl font-bold text-blue-400 mb-4 md:mb-0">@Zrrooficial</h1>
+            
+            <!-- Botões de Navegação -->
+            <nav class="flex space-x-2 sm:space-x-4">
+                <!-- 
+                  Os botões abaixo chamam a função JavaScript 'showPage' 
+                  O nome 'page-inicio' deve ser o mesmo do 'id' da 'div' lá embaixo 
+                -->
+                <button id="nav-inicio" onclick="showPage('page-inicio')" class="nav-button bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors">Início</button>
+                <button id="nav-downloads" onclick="showPage('page-downloads')" class="nav-button bg-gray-700 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors">Downloads</button>
+                <button id="nav-sobre" onclick="showPage('page-sobre')" class="nav-button bg-gray-700 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors">Sobre</button>
+                <button id="nav-links" onclick="showPage('page-links')" class="nav-button bg-gray-700 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors">Links</button>
+            </nav>
+        </header>
+
+        <!-- CONTEÚDO PRINCIPAL (ABAS) -->
+        <main id="main-content">
+
+            <!-- ======================================================= -->
+            <!-- ABA "INÍCIO"                                             -->
+            <!-- ======================================================= -->
+            <!-- O 'id' aqui (page-inicio) DEVE ser o mesmo usado no botão 'onclick' lá de cima -->
+            <div id="page-inicio" class="page-content bg-gray-800 p-6 sm:p-8 rounded-lg shadow-xl">
+                <!-- EDITÁVEL: Título de Boas-Vindas -->
+                <h2 class="text-3xl font-bold mb-4">Bem-vindo ao site oficial!</h2>
+                
+                <!-- EDITÁVEL: Texto de Boas-Vindas -->
+                <p class="text-lg text-gray-300 mb-6">
+                    Este é o espaço para encontrar todos os meus projetos, downloads e links. 
+                    Explore as abas para saber mais sobre meu canal e encontrar meus trabalhos.
+                </p>
+                
+                <!-- 
+                  =====================================================
+                  EDITÁVEL: Bloco de Imagem Adicional (Exemplo)
+                  Para adicionar uma imagem extra em qualquer lugar, 
+                  copie e cole este bloco.
+                  Basta remover as marcações de comentário (início '<!--' e fim) 
+                  e alterar o 'src' para o link da sua imagem.
+                  =====================================================
+                -->
+                <!-- INÍCIO DO BLOCO DE IMAGEM ADICIONAL (Exemplo comentado) -->
+                <!-- 
+                <img src="https://placehold.co/800x200/1F2937/7DD3FC?text=Outra+Imagem+Aqui" 
+                     alt="[Descrição da Imagem]" 
+                     class="w-full h-auto object-cover rounded-lg mb-6 shadow-md"
+                     onerror="this.src='https://placehold.co/800x200/1F2937/7DD3FC?text=Erro'">
+                -->
+                <!-- FIM DO BLOCO DE IMAGEM ADICIONAL -->
+
+
+                <!-- EDITÁVEL: Imagem de Destaque -->
+                <!-- Troque o 'src' abaixo pela URL de uma imagem sua (pode upar no imgur.com) -->
+                <img src="https://placehold.co/800x400/1F2937/7DD3FC?text=Imagem+de+Destaque+Aqui" 
+                     alt="[Imagem de Destaque]" 
+                     class="w-full h-auto object-cover rounded-lg mb-6 shadow-md"
+                     onerror="this.src='https://placehold.co/800x400/1F2937/7DD3FC?text=Erro+ao+carregar+imagem'">
+                
+                <div class="text-center">
+                    <!-- EDITÁVEL: Botão de Ação Principal (Link para o YouTube) -->
+                    <a href="https://www.youtube.com/@Zrrooficial" 
+                       target="_blank" 
+                       class="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg text-xl transition-colors shadow-lg">
+                        Visite o Canal!
+                    </a>
+                </div>
+            </div>
+
+            <!-- ======================================================= -->
+            <!-- ABA "DOWNLOADS"                                          -->
+            <!-- ======================================================= -->
+            <div id="page-downloads" class="page-content hidden bg-gray-800 p-6 sm:p-8 rounded-lg shadow-xl">
+                <!-- EDITÁVEL: Título da Seção de Downloads -->
+                <h2 class="text-3xl font-bold mb-6">Downloads</h2>
+                
+                <!-- Grade de Itens para Download -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- 
+                      =====================================================
+                      EDITÁVEL: Bloco de Download (ITEM 1)
+                      Para ADICIONAR um novo download, copie e cole todo este bloco (de <!-- INÍCIO... até <!-- FIM... ) 
+                      Para MOVER, recorte e cole este bloco em outra posição.
+                      =====================================================
+                    -->
+                    <!-- INÍCIO DO BLOCO DE DOWNLOAD -->
+                    <div class="bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col justify-between">
+                        <div>
+                            <!-- EDITÁVEL: Título do Download -->
+                            <h3 class="text-xl font-bold mb-2 text-blue-300">Meu Jogo Incrível v1.0</h3>
+                            
+                            <!-- 
+                              EDITÁVEL: Imagem/Thumbnail do Download. 
+                              Basta alterar o 'src' para o link da sua imagem.
+                            -->
+                            <img src="https://placehold.co/400x200/1F2937/7DD3FC?text=Thumbnail+Jogo" 
+                                 alt="Thumbnail do Jogo" 
+                                 class="w-full h-auto object-cover rounded-md mb-4 shadow">
+                            
+                            <!-- EDITÁVEL: Descrição do Download -->
+                            <p class="text-gray-300 mb-4">Uma breve descrição do que é este arquivo, o que ele faz, ou qual é o jogo.</p>
+                        </div>
+                        <!-- EDITÁVEL: Link do Download (coloque seu link do MediaFire, Google Drive, etc. no 'href') -->
+                        <a href="https://www.mediafire.com/" 
+                           target="_blank" 
+                           class="inline-block text-center mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">
+                            Baixar Agora
+                        </a>
+                    </div>
+                    <!-- FIM DO BLOCO DE DOWNLOAD -->
+                    
+                    
+                    <!-- 
+                      =====================================================
+                      EDITÁVEL: Bloco de Download (ITEM 2)
+                      Copie e cole este bloco para adicionar mais downloads.
+                      =====================================================
+                    -->
+                    <!-- INÍCIO DO BLOCO DE DOWNLOAD -->
+                    <div class="bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col justify-between">
+                        <div>
+                            <!-- EDITÁVEL: Título do Download -->
+                            <h3 class="text-xl font-bold mb-2 text-blue-300">Pack de Texturas</h3>
+
+                            <!-- 
+                              EDITÁVEL: Para adicionar uma imagem, copie a tag <img> 
+                              do exemplo acima e cole-a aqui, alterando o 'src'.
+                            -->
+                            
+                            <!-- EDITÁVEL: Descrição do Download -->
+                            <p class="text-gray-300 mb-4">Um pack de texturas que eu criei para o jogo X.</p>
+                        </div>
+                        <!-- EDITÁVEL: Link do Download -->
+                        <a href="https://www.mediafire.com/" 
+                           target="_blank" 
+                           class="inline-block text-center mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">
+                            Baixar Agora
+                        </a>
+                    </div>
+                    <!-- FIM DO BLOCO DE DOWNLOAD -->
+                    
+                    
+                    <!-- Adicione mais blocos de download copiados aqui -->
+
+                </div>
+            </div>
+
+            <!-- ======================================================= -->
+            <!-- ABA "SOBRE"                                              -->
+            <!-- ======================================================= -->
+            <div id="page-sobre" class="page-content hidden bg-gray-800 p-6 sm:p-8 rounded-lg shadow-xl">
+                <!-- EDITÁVEL: Título da Seção Sobre -->
+                <h2 class="text-3xl font-bold mb-6">Sobre o Canal</h2>
+                
+                <div class="flex flex-col md:flex-row gap-6">
+                    <!-- Coluna de Texto -->
+                    <div class="md:w-2/3">
+                        <!-- EDITÁVEL: Texto Sobre 1 -->
+                        <p class="text-lg text-gray-300 mb-4">
+                            Olá! Eu sou o @Zrrooficial, e este é o meu canal focado em [Seu Tópico Principal, ex: desenvolvimento de jogos, gameplays, animações].
+                        </p>
+                        
+                        <!-- 
+                          EDITÁVEL: Para adicionar uma imagem entre os parágrafos, 
+                          coloque uma tag <img> aqui, por exemplo:
+                          <img src="https://placehold.co/600x300/1F2937/7DD3FC?text=Imagem+no+Texto" alt="imagem" class="w-full rounded-md my-4 shadow-md">
+                        -->
+                        
+                        <!-- EDITÁVEL: Texto Sobre 2 -->
+                        <p class="text-lg text-gray-300 mb-4">
+                            Comecei o canal em [Ano] com o objetivo de [Seu Objetivo]. Aqui você encontrará vídeos sobre [Tópico 1], [Tópico 2] e muito mais. 
+                            Este site é o lugar central para encontrar todos os meus projetos e links importantes.
+                        </p>
+                        <!-- EDITÁVEL: Texto Sobre 3 -->
+                        <p class="text-lg text-gray-300">
+                            Obrigado por acompanhar!
+                        </p>
+                    </div>
+                    
+                    <!-- Coluna da Imagem -->
+                    <div class="md:w-1/3">
+                        <!-- EDITÁVEL: Imagem Sobre -->
+                        <!-- Troque o 'src' por uma URL de imagem sua (seu logo, sua foto, etc.) -->
+                        <img src="https://placehold.co/400x400/1F2937/7DD3FC?text=Sua+Foto+ou+Logo" 
+                             alt="[Logo @Zrrooficial]" 
+                             class="w-full h-auto object-cover rounded-lg shadow-md"
+                             onerror="this.src='https://placehold.co/400x400/1F2937/7DD3FC?text=Erro'">
+                    </div>
+                </div>
+            </div>
+
+            <!-- ======================================================= -->
+            <!-- ABA "LINKS"                                              -->
+            <!-- ======================================================= -->
+            <div id="page-links" class="page-content hidden bg-gray-800 p-6 sm:p-8 rounded-lg shadow-xl">
+                <!-- EDITÁVEL: Título da Seção Links -->
+                <h2 class="text-3xl font-bold mb-6">Links Importantes</h2>
+                
+                <!-- Grade de Links -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                    <!-- 
+                      =====================================================
+                      EDITÁVEL: Bloco de Link (ITEM 1)
+                      Para ADICIONAR um novo link, copie e cole todo este bloco <a>...</a>
+                      =====================================================
+                    -->
+                    <!-- INÍCIO DO BLOCO DE LINK -->
+                    <!-- EDITÁVEL: Link (coloque no 'href') -->
+                    <a href="https://www.youtube.com/@Zrrooficial" 
+                       target="_blank" 
+                       class="flex items-center bg-gray-700 p-4 rounded-lg shadow-lg hover:bg-gray-600 transition-colors">
+                        
+                        <!-- 
+                          EDITÁVEL: Imagem do Link (Ícone)
+                          Troque o 'src' pelo link do seu ícone/logo. 
+                          Tamanho recomendado: w-10 h-10 (40px)
+                        -->
+                        <img src="https://placehold.co/40x40/FF0000/FFFFFF?text=YT" 
+                             alt="Logo YouTube" 
+                             class="w-10 h-10 rounded-md mr-4 object-cover">
+                        
+                        <div>
+                            <!-- EDITÁVEL: Título do Link -->
+                            <h3 class="text-lg font-bold text-blue-300">YouTube</h3>
+                            <!-- EDITÁVEL: Descrição/URL do Link -->
+                            <p class="text-gray-300">@Zrrooficial (Canal Principal)</p>
+                        </div>
+                    </a>
+                    <!-- FIM DO BLOCO DE LINK -->
+
+                    
+                    <!-- INÍCIO DO BLOCO DE LINK (itch.io) -->
+                    <!-- EDITÁVEL: Link (coloque no 'href') -->
+                    <a href="https://itch.io/" 
+                       target="_blank" 
+                       class="flex items-center bg-gray-700 p-4 rounded-lg shadow-lg hover:bg-gray-600 transition-colors">
+                        
+                        <!-- 
+                          EDITÁVEL: Ícone (Pode ser um emoji como abaixo)
+                          OU pode ser uma imagem, como no exemplo do YouTube acima.
+                        -->
+                        <span class="text-3xl mr-4">🎮</span> 
+                        
+                        <div>
+                            <!-- EDITÁVEL: Título do Link -->
+                            <h3 class="text-lg font-bold text-blue-300">itch.io</h3>
+                            <!-- EDITÁVEL: Descrição/URL do Link -->
+                            <p class="text-gray-300">Meus Jogos</p>
+                        </div>
+                    </a>
+                    <!-- FIM DO BLOCO DE LINK -->
+
+                    
+                    <!-- INÍCIO DO BLOCO DE LINK (Newgrounds) -->
+                    <!-- EDITÁVEL: Link (coloque no 'href') -->
+                    <a href="https://www.newgrounds.com/" 
+                       target="_blank" 
+                       class="flex items-center bg-gray-700 p-4 rounded-lg shadow-lg hover:bg-gray-600 transition-colors">
+                        
+                        <!-- EDITÁVEL: Ícone (Pode ser um emoji ou uma <img>) -->
+                        <span class="text-3xl mr-4">🎨</span> 
+                        
+                        <div>
+                            <!-- EDITÁVEL: Título do Link -->
+                            <h3 class="text-lg font-bold text-blue-300">Newgrounds</h3>
+                            <!-- EDITÁVEL: Descrição/URL do Link -->
+                            <p class="text-gray-300">Minhas Animações/Arte</p>
+                        </div>
+                    </a>
+                    <!-- FIM DO BLOCO DE LINK -->
+
+
+                    <!-- INÍCIO DO BLOCO DE LINK (Reddit) -->
+                    <!-- EDITÁVEL: Link (coloque no 'href') -->
+                    <a href="https://www.reddit.com/" 
+                       target="_blank" 
+                       class="flex items-center bg-gray-700 p-4 rounded-lg shadow-lg hover:bg-gray-600 transition-colors">
+                        
+                        <!-- EDITÁVEL: Ícone (Pode ser um emoji ou uma <img>) -->
+                        <span class="text-3xl mr-4">🤖</span> 
+                        
+                        <div>
+                            <!-- EDITÁVEL: Título do Link -->
+                            <h3 class="text-lg font-bold text-blue-300">Reddit</h3>
+                            <!-- EDITÁVEL: Descrição/URL do Link -->
+                            <p class="text-gray-300">Meu Subreddit</p>
+                        </div>
+                    </a>
+                    <!-- FIM DO BLOCO DE LINK -->
+
+                    <!-- Adicione mais blocos de link copiados aqui -->
+
+                </div>
+            </div>
+
+        </main>
+        
+        <!-- RODAPÉ -->
+        <footer class="text-center text-gray-500 mt-12">
+            <!-- EDITÁVEL: Texto do Rodapé -->
+            <p>&copy; 2025 @Zrrooficial. Todos os direitos reservados.</p>
+        </footer>
+
+    </div>
+
+    <!-- SCRIPT DE CONTROLE DAS ABAS -->
+    <script>
+        // Pega todos os botões de navegação e todas as páginas de conteúdo
+        const navButtons = document.querySelectorAll('.nav-button');
+        const pages = document.querySelectorAll('.page-content');
+        
+        function showPage(pageIdToShow) {
+            // 1. Esconde todas as páginas
+            pages.forEach(page => {
+                page.classList.add('hidden');
+            });
+            
+            // 2. Mostra a página clicada
+            const pageToShow = document.getElementById(pageIdToShow);
+            if (pageToShow) {
+                pageToShow.classList.remove('hidden');
+            }
+            
+            // 3. Atualiza o estilo dos botões
+            navButtons.forEach(button => {
+                // Remove a classe "ativa" (bg-blue-600) de todos
+                button.classList.remove('bg-blue-600');
+                button.classList.add('bg-gray-700'); // Estilo padrão
+                
+                // Adiciona a classe "ativa" somente ao botão que corresponde à página mostrada
+                // O 'id' do botão é "nav-inicio" e o 'id' da página é "page-inicio"
+                // Estamos comparando "nav-" + "page-inicio".split('-')[1]  ("nav-" + "inicio")
+                const buttonPageName = pageIdToShow.split('-')[1]; // Pega "inicio" de "page-inicio"
+                if (button.id === 'nav-' + buttonPageName) {
+                    button.classList.add('bg-blue-600');
+                    button.classList.remove('bg-gray-700');
+                }
+            });
+        }
+        
+        // Mostrar a página "Início" por padrão ao carregar o site
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage('page-inicio');
+        });
+    </script>
+
 </body>
 </html>
